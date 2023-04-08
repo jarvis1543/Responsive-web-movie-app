@@ -1,5 +1,5 @@
 import { Component } from "../core/core"
-import aboutStore from "../store/About"
+import aboutStore from "../store/about"
 
 export default class TheFooter extends Component {
   constructor() {
