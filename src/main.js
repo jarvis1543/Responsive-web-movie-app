@@ -6,7 +6,3 @@ root.append(new App().el)
 
 router()
 
-
-
-
-

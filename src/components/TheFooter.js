@@ -9,7 +9,6 @@ export default class TheFooter extends Component {
   }
 
   render() {
-    console.log(aboutStore.state)
     const { github, email } = aboutStore.state
     this.el.innerHTML = /* html */ `
       <div>
