@@ -1,6 +1,20 @@
 import { Component } from "../core/core"
 
+interface State {
+  // 객체 안에 배열이 있으면 인덱싱이 가능하도록 추가
+  // 밑에 구문이 없으면
+  // '{ [key: string]: unknown; }' 형식에 할당할 수 없습니다.
+  [key: string]: unknown
+  menus: {
+    name: string,
+    href: string
+  }[]
+}
+
 export default class TheHeader extends Component {
+  // 명확한 할당 단언
+  // 초기화를 하지 않았지만 할당이 된 것처럼 선언
+  state!: State
   constructor() {
     super({
       tagName: 'header',
@@ -22,7 +36,8 @@ export default class TheHeader extends Component {
       }
     })
 
-    window.addEventListener('popstate', (event) => {  // 페이지가 바뀔때마다 동작하는 이벤트
+    // 페이지가 바뀔때마다 동작하는 이벤트
+    window.addEventListener('popstate', (event) => {
       this.render()
     })
   }

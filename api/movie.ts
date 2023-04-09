@@ -1,9 +1,9 @@
 import fetch from 'node-fetch'
+import { VercelRequest, VercelResponse } from '@vercel/node'
 
 const { APIKEY } = process.env // process: node.js의 전역변수
 
-export default async function handler(request, response) {
-  console.log(request)
+export default async function handler(request: VercelRequest, response: VercelResponse) {
   const { title, page, id } = JSON.parse(request.body)
   const url = id 
     ? `https://omdbapi.com?apikey=${APIKEY}&i=${id}&plot=full` 
@@ -18,4 +18,3 @@ export default async function handler(request, response) {
 
 
 
- 
